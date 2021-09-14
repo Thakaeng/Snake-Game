@@ -9,31 +9,41 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float cooldownTimeInSeconds;
 
-    private Player player;
+    private Player _player;
     
-    private Vector3 dir;
-    private float movementCooldown = 0;
+    private Vector3 _dir;
+    private float _movementCooldown = 0;
 
+    private void Awake()
+    {
+        _player = GetComponent<Player>();
+    }
 
     private void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.W)) { dir = Vector3.forward; }
-        else if (Input.GetKeyDown(KeyCode.A)) { dir = Vector3.left; }
-        else if (Input.GetKeyDown(KeyCode.S)) { dir = Vector3.back; }
-        else if (Input.GetKeyDown(KeyCode.D)) { dir = Vector3.right; }
+        if (Input.GetKeyDown(KeyCode.W)) { _dir = Vector3.forward; }
+        else if (Input.GetKeyDown(KeyCode.A)) { _dir = Vector3.left; }
+        else if (Input.GetKeyDown(KeyCode.S)) { _dir = Vector3.back; }
+        else if (Input.GetKeyDown(KeyCode.D)) { _dir = Vector3.right; }
 
 
-        if (movementCooldown <= Time.time)
+        if (_movementCooldown <= Time.time)
         {
-            movementCooldown = Time.time + cooldownTimeInSeconds;
-            transform.position += dir;
+            _movementCooldown = Time.time + cooldownTimeInSeconds;
+            MoveBodyParts();
+            _player.head.transform.position += _dir;
         }
     }
 
     private void MoveBodyParts()
     {
         
+        for (int i = _player.bodyPieces.Count - 1; i > 0; i--)
+        {
+            _player.bodyPieces[i].MovePiece(_player.bodyPieces[i-1].Position);
+        }
+        _player.bodyPieces[0].MovePiece(_player.head.transform.position);
     }
     
 }

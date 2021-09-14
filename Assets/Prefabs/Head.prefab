@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2318164724072323354}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: SnakeHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbeb0f18f38eb642b18386fdde7768c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2318164724072323345}
-  speed: 1
   cooldownTimeInSeconds: 0.5

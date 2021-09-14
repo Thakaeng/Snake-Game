@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Player
+class Player : MonoBehaviour
 {
-    private int StartingBodyPieces = 2;
+    private const int StartingBodyPieces = 2;
 
-    private List<BodyPiece> _bodyPieces;
+    public Transform head;
+    public List<BodyPiece> bodyPieces;
 
-    public void InitialSetup()
+    public void Start()
     {
-        
+        head = transform.GetChild(0);
+        for (int i = 1; i <= StartingBodyPieces; i++)
+        {
+            bodyPieces.Add(transform.GetChild(i).GetComponent<BodyPiece>());
+        }
     }
 
     public void AddBodyPiece()

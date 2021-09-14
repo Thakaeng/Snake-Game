@@ -7,6 +7,8 @@ public class PickupDestroy : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.CompareTag("SnakeHead")) /*add point to score*/;
+        // Spawn new pickup
         Destroy(gameObject);
     }
 }

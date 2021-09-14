@@ -8,8 +8,7 @@ class BodyPiece : MonoBehaviour
     
     public Vector3 Position
     {
-        get => position;
-        set => position = value;
+        get => transform.position;
     }
 
     public void MovePiece(Vector3 targetPos)
