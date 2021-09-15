@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     [SerializeField] private Text scoreText;
-    [SerializeField] private int points;
-    
-    public int Points
+    [SerializeField] private int score;
+
+    public void IncreaseScore()
     {
-        get => points;
-        set => points = value;
+        score++;
+        scoreText.text = score.ToString();
     }
 }

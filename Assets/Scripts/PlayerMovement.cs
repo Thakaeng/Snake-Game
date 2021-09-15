@@ -6,12 +6,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    [SerializeField] private float cooldownTimeInSeconds;
+    [SerializeField] private int cooldownTimeInMS;
 
     private Player _player;
     
-    private Vector3 _dir;
+    private Vector3 _dir = Vector3.right;
     private float _movementCooldown = 0;
 
     private void Awake()
@@ -21,19 +20,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Escape)) _player.isAlive = !_player.isAlive;
         
-        if (Input.GetKeyDown(KeyCode.W)) { _dir = Vector3.forward; }
-        else if (Input.GetKeyDown(KeyCode.A)) { _dir = Vector3.left; }
-        else if (Input.GetKeyDown(KeyCode.S)) { _dir = Vector3.back; }
-        else if (Input.GetKeyDown(KeyCode.D)) { _dir = Vector3.right; }
+        if (!_player.isAlive) return;
+        
+        if (Input.GetKeyDown(KeyCode.W)) _dir = Vector3.forward;
+        else if (Input.GetKeyDown(KeyCode.A)) _dir = Vector3.left;
+        else if (Input.GetKeyDown(KeyCode.S)) _dir = Vector3.back;
+        else if (Input.GetKeyDown(KeyCode.D)) _dir = Vector3.right;
 
-
-        if (_movementCooldown <= Time.time)
-        {
-            _movementCooldown = Time.time + cooldownTimeInSeconds;
-            MoveBodyParts();
-            _player.head.transform.position += _dir;
-        }
+        if (_movementCooldown >= Time.time) return;
+        
+        _movementCooldown = Time.time + (0.001f * cooldownTimeInMS);
+        MoveBodyParts();
+        _player.head.transform.position += _dir;
+        
     }
 
     private void MoveBodyParts()
