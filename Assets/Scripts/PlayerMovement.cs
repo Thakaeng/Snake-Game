@@ -47,5 +47,9 @@ public class PlayerMovement : MonoBehaviour
         }
         _player.bodyPieces[0].MovePiece(_player.head.transform.position);
     }
-    
+
+    public void ChangeSpeed(int cooldownChange)
+    {
+        cooldownTimeInMS -= cooldownChange;
+    }
 }

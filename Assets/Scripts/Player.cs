@@ -10,7 +10,7 @@ class Player : MonoBehaviour
 
     public Transform head;
     [SerializeField] private GameObject bodyPiecePrefab;
-    public List<BodyPiece> bodyPieces;
+    public List<SnakeBodyPiece> bodyPieces;
 
     [HideInInspector] public bool isAlive = false;
 
@@ -19,7 +19,7 @@ class Player : MonoBehaviour
         head = transform.GetChild(0);
         for (int i = 1; i <= StartingBodyPieces; i++)
         {
-            bodyPieces.Add(transform.GetChild(i).GetComponent<BodyPiece>());
+            bodyPieces.Add(transform.GetChild(i).GetComponent<SnakeBodyPiece>());
         }
     }
 
@@ -27,11 +27,6 @@ class Player : MonoBehaviour
     {
         var newBodyPiece = Instantiate(bodyPiecePrefab, bodyPieces.Last().Position, Quaternion.identity);
         newBodyPiece.transform.parent = gameObject.transform;
-        bodyPieces.Add(newBodyPiece.GetComponent<BodyPiece>());
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Arena")) isAlive = false;
+        bodyPieces.Add(newBodyPiece.GetComponent<SnakeBodyPiece>());
     }
 }

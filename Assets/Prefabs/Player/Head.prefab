@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2318164724072323358}
   - component: {fileID: 2318164724072323355}
   - component: {fileID: 2318164724072323354}
+  - component: {fileID: -7600105292245691327}
   m_Layer: 0
   m_Name: Head
   m_TagString: SnakeHead
@@ -126,3 +127,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTimeInMS: 0
+--- !u!114 &-7600105292245691327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318164724072323345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5631a33a20e42be4b929a5b7a8df443a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
