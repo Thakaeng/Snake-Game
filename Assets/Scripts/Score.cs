@@ -21,9 +21,15 @@ public class Score : MonoBehaviour
         scoreText.text = score.ToString("F0");
     }
 
-    public void IncreaseMultiplier()
+    public void IncreaseMultiplier(bool increase)
     {
-        scoreMultiplier += 0.1f;
+        switch (increase)
+        {
+            case true: scoreMultiplier += 0.1f; break;
+            case false: scoreMultiplier -= 0.1f;  break;
+        }
+
+        Mathf.Clamp(scoreMultiplier - 0.1f, 0f, 20f);
         multiplierText.text = "x" + scoreMultiplier.ToString("F1");
     }
 }

@@ -14,6 +14,7 @@ public class PickupManager : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent pickedUpScoreIncrease;
     [SerializeField] private UnityEvent pickedUpSpeedUp;
+    [SerializeField] private UnityEvent pickedUpSpeedDown;
     
 
     public void ObjectPickedUp(PickupTypes input)
@@ -23,7 +24,7 @@ public class PickupManager : MonoBehaviour
             case PickupTypes.Invalid: Debug.Log("Invalid spawn location"); SpawnNewPickup(); break;
             case PickupTypes.Apple: pickedUpScoreIncrease.Invoke(); break;
             case PickupTypes.SpeedUp: pickedUpSpeedUp.Invoke(); break;
-            case PickupTypes.SpeedDown: Debug.Log("gasa ***bil, förlåt för språket men här jäveln kan inte köra bil"); break;
+            case PickupTypes.SpeedDown: pickedUpSpeedDown.Invoke(); break;
         }
     }
 
@@ -38,4 +39,10 @@ public class PickupManager : MonoBehaviour
             _pickups[(int)randomPickup].transform.rotation);
         newPickup.transform.parent = gameObject.transform;
     }
+
+    public void SpawnSpecificPickup(PickupTypes pType, Vector3Int coordinate)
+    {
+        Instantiate(_pickups[(int)pType], coordinate, _pickups[(int)pType].transform.rotation);
+    }
+    
 }

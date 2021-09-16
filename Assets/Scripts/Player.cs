@@ -29,4 +29,9 @@ class Player : MonoBehaviour
         newBodyPiece.transform.parent = gameObject.transform;
         bodyPieces.Add(newBodyPiece.GetComponent<SnakeBodyPiece>());
     }
+
+    public void ToggleMovement()
+    {
+        isAlive = !isAlive;
+    }
 }

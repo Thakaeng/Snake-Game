@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum PickupTypes
 {
-    Invalid = 0,
-    Apple = 1, 
-    SpeedUp = 2, 
-    SpeedDown = 3
+    Invalid = 99,
+    Apple = 0, 
+    SpeedUp = 1, 
+    SpeedDown = 2
 }

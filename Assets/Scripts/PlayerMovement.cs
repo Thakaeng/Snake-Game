@@ -20,9 +20,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Escape)) _player.isAlive = !_player.isAlive;
-        
         if (!_player.isAlive) return;
         
         if (Input.GetKeyDown(KeyCode.W)) _dir = Vector3.forward;
