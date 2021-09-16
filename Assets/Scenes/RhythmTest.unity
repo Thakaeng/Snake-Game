@@ -1211,6 +1211,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1210847545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1210847547}
+  - component: {fileID: 1210847546}
+  m_Layer: 0
+  m_Name: Wont Let You Go
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1210847546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210847545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158cb7a9eaa39ce4d99d5933de8f1899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Won't Let You Go
+  NotesCount: 10
+  Types: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Coords:
+  - {x: 5, y: 0, z: 5}
+  - {x: 6, y: 0, z: 5}
+  - {x: 7, y: 0, z: 5}
+  - {x: 8, y: 0, z: 0}
+  - {x: 9, y: 0, z: 0}
+  - {x: 10, y: 0, z: 0}
+  - {x: 11, y: 0, z: 0}
+  - {x: 12, y: 0, z: 0}
+  - {x: 13, y: 0, z: 0}
+  - {x: 14, y: 0, z: 0}
+--- !u!4 &1210847547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210847545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1293075622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1510,17 +1567,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9e01e669337a84469a7efa4fbfa7d90, type: 3}
---- !u!114 &1674069704 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7185624798235508440, guid: f9e01e669337a84469a7efa4fbfa7d90, type: 3}
-  m_PrefabInstance: {fileID: 1674069703}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bbeb0f18f38eb642b18386fdde7768c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1674069705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5263021435456086762, guid: f9e01e669337a84469a7efa4fbfa7d90, type: 3}
@@ -1662,6 +1708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857741157}
+  - component: {fileID: 1857741159}
   - component: {fileID: 1857741158}
   m_Layer: 0
   m_Name: Spawner
@@ -1694,85 +1741,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 1857741156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac28ca58eba751042b93d6238cfcb870, type: 3}
+  m_Script: {fileID: 11500000, guid: 1df44cd1d26bcff46a07c87484a0336b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pickups:
+  input: {fileID: 1210847546}
+  Name: 
+  NotesCount: 0
+--- !u!114 &1857741159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857741156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09ead8ca10d2db4d9968e6b08dab17e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  song: {fileID: 1857741158}
+  pickups:
   - {fileID: 5490583300137840516, guid: be4e8ecb915d2034386d184174f445f3, type: 3}
   - {fileID: 5282474084325000463, guid: 7bb3bcb454bd18b4dbcfa8f9c759067f, type: 3}
   - {fileID: 6467449619464701334, guid: ca2c4613ede44e04087ba64d9aacb9a2, type: 3}
-  pickupSpawnRates:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2.0002
-      outSlope: 2.0002
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5
-      value: 1.0001
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 103
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9
-      value: 2.0001
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 103
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 2.0001
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 103
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  endOfSong:
+    m_PersistentCalls:
+      m_Calls: []
   pickedUpScoreIncrease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1890024871}
-        m_TargetAssemblyTypeName: Score, Assembly-CSharp
-        m_MethodName: IncreaseScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1857741158}
-        m_TargetAssemblyTypeName: PickupManager, Assembly-CSharp
-        m_MethodName: SpawnNewPickup
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1674069706}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: AddBodyPiece
+      - m_Target: {fileID: 1857741159}
+        m_TargetAssemblyTypeName: NotesManager, Assembly-CSharp
+        m_MethodName: SpawnSpecificPickup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1784,82 +1784,10 @@ MonoBehaviour:
         m_CallState: 2
   pickedUpSpeedUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1674069704}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: ChangeSpeed
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1857741158}
-        m_TargetAssemblyTypeName: PickupManager, Assembly-CSharp
-        m_MethodName: SpawnNewPickup
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1890024871}
-        m_TargetAssemblyTypeName: Score, Assembly-CSharp
-        m_MethodName: IncreaseMultiplier
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   pickedUpSpeedDown:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1674069704}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: ChangeSpeed
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1857741158}
-        m_TargetAssemblyTypeName: PickupManager, Assembly-CSharp
-        m_MethodName: SpawnNewPickup
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1890024871}
-        m_TargetAssemblyTypeName: Score, Assembly-CSharp
-        m_MethodName: IncreaseMultiplier
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1890024869
 GameObject:
   m_ObjectHideFlags: 0
