@@ -8,6 +8,7 @@ class Player : MonoBehaviour
 {
     private const int StartingBodyPieces = 2;
 
+    [SerializeField] private GameObject noteMarker;
     public Transform head;
     [SerializeField] private GameObject bodyPiecePrefab;
     public List<SnakeBodyPiece> bodyPieces;
@@ -33,5 +34,10 @@ class Player : MonoBehaviour
     public void ToggleMovement()
     {
         isAlive = !isAlive;
+    }
+
+    public void PlaceNoteMarker()
+    {
+        Instantiate(noteMarker, head.transform.position, noteMarker.transform.rotation);
     }
 }

@@ -21,7 +21,8 @@ public class NotesManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(song.Name);
+        Debug.Log("Playing: " + song.Name);
+        SpawnSpecificPickup();
         SpawnSpecificPickup();
     }
 
@@ -40,9 +41,12 @@ public class NotesManager : MonoBehaviour
     public void SpawnSpecificPickup()
     {
         currentNote = song.GetNextNote();
-        Instantiate(
+        if (currentNote.Type == PickupTypes.Invalid) return;
+        
+        GameObject newNote = Instantiate(
             pickups[(int)currentNote.Type], 
             currentNote.Coordinates, 
             pickups[(int)currentNote.Type].transform.rotation);
+        newNote.transform.parent = transform;
     }
 }

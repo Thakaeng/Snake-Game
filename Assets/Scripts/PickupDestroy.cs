@@ -1,23 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PickupDestroy : MonoBehaviour
 {
-    private PickupManager pm;
+    private NotesManager _notesManager;
     public PickupTypes type;
     
     private void Start()
     {
-        pm = GetComponentInParent<PickupManager>();
+        _notesManager = GetComponentInParent<NotesManager>();
+        if(ReferenceEquals(_notesManager, null)) Debug.LogWarning("please dear god why wont you work its 3am");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("SnakeBody")) pm.ObjectPickedUp(PickupTypes.Invalid);
-        else if (other.gameObject.CompareTag("SnakeHead")) pm.ObjectPickedUp(type);
+        if (other.gameObject.CompareTag("SnakeBody")) _notesManager.ObjectPickedUp(PickupTypes.Invalid);
+        else if (other.gameObject.CompareTag("SnakeHead")) _notesManager.ObjectPickedUp(type);
         Destroy(gameObject);
     }
 }
