@@ -12,6 +12,12 @@ public class SnakeHead : MonoBehaviour
         _player = GetComponentInParent<Player>();
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("ded");
+        if (other.gameObject.CompareTag("SnakeBody")) _player.isAlive = false;
+    }
+
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("u ded boi");

@@ -317,7 +317,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 100, y: 0}
-  m_SizeDelta: {x: 160, y: 100}
+  m_SizeDelta: {x: 160, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181990267
 MonoBehaviour:
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: " - WASD\n - Space\n - R\n - Escape"
+  m_Text: " - WASD\n - Return\n - Space\n - 1\n - 2\n - R\n - Escape"
 --- !u!222 &181990268
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1241,19 +1241,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Won't Let You Go
-  Types: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   Coords:
   - {x: 14, y: 0, z: 11}
   - {x: 13, y: 0, z: 13}
-  - {x: 7, y: 0, z: 12}
-  - {x: 8, y: 0, z: 6}
-  - {x: 14, y: 0, z: 7}
+  - {x: 8, y: 0, z: 12}
+  - {x: 9, y: 0, z: 5}
+  - {x: 14, y: 0, z: 6}
   - {x: 13, y: 0, z: 15}
   - {x: 7, y: 0, z: 14}
   - {x: 6, y: 0, z: 8}
   - {x: 0, y: 0, z: 9}
   - {x: 1, y: 0, z: 20}
-  - {x: 4, y: 0, z: 19}
+  - {x: 3, y: 0, z: 19}
+  - {x: 4, y: 0, z: 11}
+  - {x: 11, y: 0, z: 10}
+  - {x: 12, y: 0, z: 3}
+  - {x: 19, y: 0, z: 4}
+  - {x: 18, y: 0, z: 11}
+  - {x: 13, y: 0, z: 12}
+  Types: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &1210847547
 Transform:
   m_ObjectHideFlags: 0
@@ -1444,7 +1450,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -61, y: 0}
-  m_SizeDelta: {x: 160, y: 100}
+  m_SizeDelta: {x: 160, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1472853602
 MonoBehaviour:
@@ -1481,7 +1487,14 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Movement
 
+    Place Note Marker
+
     Pause/Unpause
+
+    Load Main Game
+
+    Load
+    Rhythm Test
 
     Restart
 
