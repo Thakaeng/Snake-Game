@@ -47,9 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8026ba0f12913084cab0ddfc7168e47d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noteMarker: {fileID: 1036906973942186379, guid: 17d2e0a4afd88f74989d0eae6f180b9b, type: 3}
   head: {fileID: 5263021435456086758}
-  bodyPiecePrefab: {fileID: 0}
+  bodyPiecePrefab: {fileID: 6009587117701771823, guid: 904a9595a5fe932499869c3278d9fbcf, type: 3}
   bodyPieces: []
+  isAlive: 0
 --- !u!114 &7185624798235508440
 MonoBehaviour:
   m_ObjectHideFlags: 0

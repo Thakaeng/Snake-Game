@@ -1,13 +1,14 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// This notes manager is for the rhythm game mode
+// For the normal game of snake, see PickupManager.cs
 public class NotesManager : MonoBehaviour
 {
     public Song song;
 
-    private Note currentNote;
+    private Note _currentNote;
     
     
     [SerializeField] private List<GameObject> pickups;
@@ -22,6 +23,9 @@ public class NotesManager : MonoBehaviour
     private void Start()
     {
         Debug.Log("Playing: " + song.Name);
+        
+        // spawn the first two notes so that the game is always two notes ahead of the player,
+        // making it easier for the player to plan out how to move
         SpawnSpecificPickup();
         SpawnSpecificPickup();
     }
@@ -31,22 +35,30 @@ public class NotesManager : MonoBehaviour
     {
         switch (input)
         {
-            case PickupTypes.Invalid: endOfSong.Invoke(); break;
-            case PickupTypes.Apple: pickedUpScoreIncrease.Invoke(); break;
-            case PickupTypes.SpeedUp: pickedUpSpeedUp.Invoke(); break;
-            case PickupTypes.SpeedDown: pickedUpSpeedDown.Invoke(); break;
+            case PickupTypes.Invalid:
+                endOfSong.Invoke();
+                break;
+            case PickupTypes.Apple:
+                pickedUpScoreIncrease.Invoke();
+                break;
+            case PickupTypes.SpeedUp:
+                pickedUpSpeedUp.Invoke();
+                break;
+            case PickupTypes.SpeedDown:
+                pickedUpSpeedDown.Invoke();
+                break;
         }
     }
 
     public void SpawnSpecificPickup()
     {
-        currentNote = song.GetNextNote();
-        if (currentNote.Type == PickupTypes.Invalid) return;
+        _currentNote = song.GetNextNote();
+        if (_currentNote.Type == PickupTypes.Invalid) return;
         
         GameObject newNote = Instantiate(
-            pickups[(int)currentNote.Type], 
-            currentNote.Coordinates, 
-            pickups[(int)currentNote.Type].transform.rotation);
+            pickups[(int)_currentNote.Type], 
+            _currentNote.Coordinates, 
+            pickups[(int)_currentNote.Type].transform.rotation);
         newNote.transform.parent = transform;
     }
 }

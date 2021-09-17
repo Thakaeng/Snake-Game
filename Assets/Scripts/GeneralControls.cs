@@ -1,13 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GeneralControls : MonoBehaviour
 {
-
-    [SerializeField] private Player player;
-
     [SerializeField] private UnityEvent pauseGame;
     [SerializeField] private UnityEvent placeNoteMarker;
 
@@ -16,8 +12,10 @@ public class GeneralControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
         if (Input.GetKeyDown(KeyCode.Space)) pauseGame.Invoke();
         if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
         if (Input.GetKeyDown(KeyCode.Alpha1)) SceneManager.LoadScene("MainGame");
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) SceneManager.LoadScene("RhythmTest");
+        // else if (Input.GetKeyDown(KeyCode.Alpha2)) SceneManager.LoadScene("RhythmTest");
+        
         if (Input.GetKeyDown(KeyCode.Return)) placeNoteMarker.Invoke();
     }
 }

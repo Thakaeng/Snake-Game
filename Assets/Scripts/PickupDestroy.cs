@@ -7,21 +7,19 @@ public class PickupDestroy : MonoBehaviour
     private NotesManager _notesManager;
     public PickupTypes type;
 
-    private string _curScene;
+    private string _currentScene;
     
     private void Start()
     {
-        _curScene = SceneManager.GetActiveScene().name;
+        _currentScene = SceneManager.GetActiveScene().name;
         
-        if (_curScene == "MainGame") _pickupManager = GetComponentInParent<PickupManager>();
+        if (_currentScene == "MainGame") _pickupManager = GetComponentInParent<PickupManager>();
         else _notesManager = GetComponentInParent<NotesManager>();
-        
-        if (ReferenceEquals(_pickupManager, null)) Debug.LogWarning("please dear god why wont you work its 3am");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_curScene == "MainGame")
+        if (_currentScene == "MainGame")
         {
             if (other.gameObject.CompareTag("SnakeBody")) _pickupManager.ObjectPickedUp(PickupTypes.Invalid);
             else if (other.gameObject.CompareTag("SnakeHead")) _pickupManager.ObjectPickedUp(type);

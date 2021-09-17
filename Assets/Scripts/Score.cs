@@ -12,9 +12,9 @@ public class Score : MonoBehaviour
     
     public void IncreaseScore()
     {
-        if(score == 0) { score++; return; }
+        if (score == 0) score++;
+        else score += baseScoreIncrease * scoreMultiplier;
         
-        score += baseScoreIncrease * scoreMultiplier;
         scoreText.text = score.ToString("F0");
     }
 
@@ -26,7 +26,7 @@ public class Score : MonoBehaviour
             case false: scoreMultiplier -= 0.1f;  break;
         }
 
-        Mathf.Clamp(scoreMultiplier - 0.1f, 0f, 20f);
+         scoreMultiplier = Mathf.Clamp(scoreMultiplier, 1f, 20f);
         multiplierText.text = "x" + scoreMultiplier.ToString("F1");
     }
 }

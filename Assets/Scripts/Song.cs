@@ -6,7 +6,7 @@ public class Song : MonoBehaviour
     public SongProperties input;
     
     public string Name;
-    public int NotesCount;
+    public int notesCount;
     private List<Note> _notesList = new List<Note>();
 
     private Note EndOfSong = new Note();
@@ -16,13 +16,13 @@ public class Song : MonoBehaviour
     private void Start()
     {
         Name = input.Name;
-        NotesCount = input.Coords.Length;
+        notesCount = input.coords.Length;
 
-        for (int i = 0; i < NotesCount; i++)
+        for (int i = 0; i < notesCount; i++)
         {
             _newNote = new Note();
-            _newNote.Coordinates = input.Coords[i];
-            _newNote.Type = input.Types[i];
+            _newNote.Coordinates = input.coords[i];
+            _newNote.Type = input.types[i];
             _notesList.Add(_newNote);
         }
         
@@ -32,6 +32,6 @@ public class Song : MonoBehaviour
     
     public Note GetNextNote()
     {
-        return _step < NotesCount ?  _notesList[_step++] : EndOfSong;
+        return _step < notesCount ?  _notesList[_step++] : EndOfSong;
     }
 }

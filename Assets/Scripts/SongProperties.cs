@@ -1,21 +1,20 @@
-using System;
 using UnityEngine;
 
 public class SongProperties : MonoBehaviour
 {
     public string Name;
 
-    public Vector3[] Coords;
+    public Vector3[] coords;
     
-    public PickupTypes[] Types;
+    public PickupTypes[] types;
 
     private void Awake()
     {
-        Types = new PickupTypes[Coords.Length];
+        types = new PickupTypes[coords.Length];
         
-        for (int i = 0; i < Coords.Length; i++)
+        for (int i = 0; i < coords.Length; i++)
         {
-            Types[i] = PickupTypes.Apple;
+            types[i] = PickupTypes.Apple;
         }
     }
 }

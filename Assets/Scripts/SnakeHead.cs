@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SnakeHead : MonoBehaviour
@@ -12,15 +9,22 @@ public class SnakeHead : MonoBehaviour
         _player = GetComponentInParent<Player>();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("ded");
-        if (other.gameObject.CompareTag("SnakeBody")) _player.isAlive = false;
+        if (other.gameObject.CompareTag("SnakeBody"))
+        {
+            _player.isAlive = false;
+            Debug.Log("self destruction lol");
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("u ded boi");
-        if (other.gameObject.CompareTag("Arena")) _player.isAlive = false;
+        
+        if (other.gameObject.CompareTag("Arena"))
+        {
+            _player.isAlive = false;
+            Debug.Log("you cannot run away from you fate");
+        }
     }
 }

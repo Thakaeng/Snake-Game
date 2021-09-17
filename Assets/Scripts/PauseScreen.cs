@@ -1,20 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 public class PauseScreen : MonoBehaviour
 {
-
     [SerializeField] private GameObject pauseScreen;
     
     public void EnablePauseScreen()
     {
         switch (pauseScreen.activeSelf)
         {
-            case true: pauseScreen.SetActive(false);
+            case true:
+                pauseScreen.SetActive(false);
                 break;
-            case false: pauseScreen.SetActive(true);
+            case false:
+                pauseScreen.SetActive(true);
                 break;
         }
     }
